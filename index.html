@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Data Science Toolkit</title>
+
+		<meta name="description" content="An overview of the Data Science Toolkit">
+		<meta name="author" content="Don Allison">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>The Data Science Toolkit</h1>
+					<h3>Don Allison</h3>
+				</section>
+
+				<section>
+					<h2>Background</h2>
+					<ul>
+						<li><a href="http://www.datasciencetoolkit.org/" target=_blank>http://www.datasciencetoolkit.org/</a></li>
+						<li>Specialized Linux distribution</li>
+						<ul>
+							<li>Built-in open datasets</li>
+							<li>Simple interface</li>
+						</ul>
+						<li>Created by <a href="https://github.com/petewarden" target=_blank>Pete Warden</a></li>
+					</ul>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Features</h2>
+					</section>
+					<section>
+						<h2>Geocoding</h2>
+						<ul>
+							<li>Coordinates of physical address</li>
+							<li>Coordinates of IP address</li>
+							<li>Political boundaries for coordinates</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Geostatistics</h2>
+						<ul>
+							<li>Statistics for a coordinate pair</li>
+							<ul>
+								<li>Geographic: Elevation, mean temperature, etc.</li>
+								<li>Demographic: Population density, racial makeup, etc.</li>
+								<li>Economic: Income, unemployment, etc.</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Document parsing</h2>
+						<ul>
+							<li>Image/PDF to plaintext</li>
+							<li>HTML to plaintext</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Text processing</h2>
+						<ul>
+							<li>Name and attributes of people mentioned in text</li>
+							<li>Coordinates of places mentioned in text</li>
+							<li>UNIX time for times mentioned in text</li>
+							<li>Sentiment analysis</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Strengths</h2>
+					</section>
+					<section>
+						<h2>Free and open source</h2>
+						<ul>
+							<li>Source code is available on <a href="https://github.com/petewarden/dstk" target=_blank>GitHub</a></li>
+							<li>Built with free and open-source software</li>
+							<li>Uses free and open datasets</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Online or offline</h2>
+						<ul>
+							<li>Query the <a href="http://www.datasciencetoolkit.org/" target=_blank>DSTK server</a> directly...</li>
+							<ul>
+								<li>Flexibility</li>
+								<li>Easy prototyping</li>
+							</ul>
+							<li>...or <a href="http://www.datasciencetoolkit.org/developerdocs#setup" target=_blank>set up your own server</a>
+							<ul>
+								<li>Low latency</li>
+								<li>Better data security</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Customizable</h2>
+						<p>You have several options for setting up your own server</p>
+						<ul>
+							<li><a href="http://aws.amazon.com/ec2/" target=_blank>EC2</a> instance</li>
+							<li><a href="https://www.vagrantup.com/" target=_blank>Vagrant</a> box</li>
+							<li><a href="http://en.wikipedia.org/wiki/Open_Virtualization_Format" target=_blank>Open Virtualization Format</a></li>
+							<li><a href="https://github.com/petewarden/dstk/blob/master/docs/ec2setup.txt" target=_blank>Roll your own</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Accessible</h2>
+						<p>Libraries are available for</p>
+						<ul>
+							<li>Command line</li>
+							<li>Excel</li>
+							<li>JavaScript</li>
+							<li>R</li>
+							<li>Ruby</li>
+							<li>Python</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Limitations</h2>
+					</section>
+					<section>
+						<h2></h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Demo</h2>
+					</section>
+					<section>
+						<h2></h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Case Study</h2>
+					</section>
+					<section>
+						<h2>Bulk geocoding</h2>
+						<ul>
+							<li>Task: Geocode hundreds of thousands of physical addresses in a crime incident dataset</li>
+							<li>Challenges</li>
+							<ul>
+								<li>Data security</li>
+								<li>Transaction limits</li>
+								<li>Latency</li>
+							</ul>
+							<li>Solution: DSTK and Visual Basic for Applications (VBA)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Step One: Obtain DSTK</h2>
+						<ul>
+							<li>Download the <a href="http://static.datasciencetoolkit.org/dstk_0.50.ova" target=_blank>.ova version</a> (~19.8GB) of DSTK</li>
+							<li>Install <a href="https://www.virtualbox.org/" target=_blank>VirtualBox</a></li>
+							<li>Import the .ova file into VirtualBox</li>
+							<ul>
+								<li>File > Import Appliance</li>
+							</ul>
+							<li>Boot DSTK</li>
+								<ul>
+									<li>Default username and password are <code>vagrant</code></li>
+								</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Step Two: Configure DSTK</h2>
+						<ul>
+						<li>Determine the IP of the "guest" machine</li>
+							<ul>
+								<li>In DSTK, type <code>ifconfig</code> and find <code>inet address</code></li>
+								<li>Probably <code>10.0.2.15</code></li>
+							</ul>
+						<li>Forward that IP to localhost on the "host" machine</li>
+							<ul>
+								<li>In VirtualBox, select Machine > Settings > Network > Advanced > Port Forwarding</li>
+								<li>Forward <code>10.0.2.15:80</code> (guest) to <code>127.0.0.1:8000</code> (host)</li>
+							</ul>
+						<li>Verify that visiting <code>127.0.0.1:8000</code> on the host machine resolves to DSTK</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Create VBA Scripts</h2>
+						<pre><code>' Dependencies: Microsoft WinHTTP Services, version 5.1
+' Add actual VBA code</code></pre>
+						</ul>
+					</section>
+					<section>
+						<h2>Execute VBA Script</h2>
+						<p><i>Embed screenshot of Excel worksheet and formulas...</i></p>
+					</section>
+					<section>
+						<h2>Demo</h2>
+						<p><i>Embed case study video here...</i></p>
+					</section>
+					<section>
+						<h2>Resulting Maps</h2>
+						<p><i>Embed animated heatmap here...</i></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Future Work</h2>
+					</section>
+					<section>
+						<h2></h2>
+					</section>
+				</section>
+
+				<section>
+					<h2>Questions?</h2>
+					<br>
+					<p>Don Allison<br><a href="http://doneallison.com" target=_blank>http://doneallison.com</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
