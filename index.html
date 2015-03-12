@@ -79,9 +79,8 @@
 						<ul>
 							<li>Statistics for a coordinate pair</li>
 							<ul>
-								<li>Geographic: Elevation, mean temperature, etc.</li>
-								<li>Demographic: Population density, racial makeup, etc.</li>
-								<li>Economic: Income, unemployment, etc.</li>
+								<li>Geographic: Elevation, temperature, precipitation, etc.</li>
+								<li>Demographic: Population density, housing units, racial makeup, etc.</li>
 							</ul>
 						</ul>
 					</section>
@@ -134,7 +133,7 @@
 						<h2>Customizable</h2>
 						<p>You have several options for setting up your own server</p>
 						<ul>
-							<li><a href="http://aws.amazon.com/ec2/" target=_blank>EC2</a> instance</li>
+							<li>Ready-to-go <a href="http://aws.amazon.com/ec2/" target=_blank>EC2</a> instance</li>
 							<li><a href="https://www.vagrantup.com/" target=_blank>Vagrant</a> box</li>
 							<li><a href="http://en.wikipedia.org/wiki/Open_Virtualization_Format" target=_blank>Open Virtualization Format</a></li>
 							<li><a href="https://github.com/petewarden/dstk/blob/master/docs/ec2setup.txt" target=_blank>Roll your own</a></li>
@@ -205,6 +204,9 @@
 						</ul>
 					</section>
 					<section>
+						<img src="images/boot.png" alt="DSTK after booting up for the first time in VirtualBox">
+					</section>
+					<section>
 						<h2>Step Two: Configure DSTK</h2>
 						<ul>
 						<li>Determine the IP of the "guest" machine</li>
@@ -221,21 +223,63 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Create VBA Scripts</h2>
-						<pre><code>' Dependencies: Microsoft WinHTTP Services, version 5.1
-' Add actual VBA code</code></pre>
-						</ul>
+						<img src="images/port_forwarding.png" alt="Port forwarding settings that allow access to guest localhost from host machine">
 					</section>
 					<section>
-						<h2>Execute VBA Script</h2>
+						<img src="images/localhost.png" alt="Successful request to the server on guest localhost">
+					</section>
+					<section>
+						<img src="images/json_response.png" alt="Successful JSON response from server on guest localhost">
+					</section>
+					<section>
+						<h2>Step Three: Create VBA Scripts</h2>
+						<pre><code>' Dependencies: Microsoft WinHTTP Services, version 5.1
+
+Public Function getGeocode(address As String) As String
+
+Dim MyRequest As New WinHttpRequest
+Dim URL As String
+
+URL = "http://localhost:8000/street2coordinates/" & address
+MyRequest.Open "GET", URL
+MyRequest.send
+getGeocode = MyRequest.responseText
+    
+End Function
+</code></pre>
+					</section>
+					<section>
+						<img src="images/function_call.png" alt="Calling the VBA function from Excel" height=75% width=75%>
+					</section>
+					<section>
+						<img src="images/function_output.png" alt="Successful JSON response using VBA function" height=75% width=75%>
+					</section>
+					<section>
+						<h2>Step Three: Create VBA Scripts</h2>
+						<pre><code>Public Function getLatitude(geocode As String) As String
+    If InStr(geocode, "latitude") = 0 Then
+        getLatitude = "None"
+    Else
+        getLatitude = Mid(geocode, InStr(geocode, "latitude") + 10, InStr(Mid(geocode, InStr(geocode, "latitude") + 10), ",") - 1)
+    End If
+End Function</code></pre>
+						<pre><code>Public Function getLongitude(geocode As String) As String
+    If InStr(geocode, "longitude") = 0 Then
+        getLongitude = "None"
+    Else
+        getLongitude = Mid(geocode, InStr(geocode, "longitude") + 11, InStr(Mid(geocode, InStr(geocode, "longitude") + 11), ",") - 1)
+    End If
+End Function</code></pre>
+					</section>
+					<section>
+						<img src="images/parse.png" alt="Parsing the JSON response reveals latitude and longitude coordinates" height=75% width=75%>
+					</section>
+					<section>
+						<h2>Step Four: Execute VBA Script</h2>
 						<p><i>Embed screenshot of Excel worksheet and formulas...</i></p>
 					</section>
 					<section>
-						<h2>Demo</h2>
-						<p><i>Embed case study video here...</i></p>
-					</section>
-					<section>
-						<h2>Resulting Maps</h2>
+						<h2>Results</h2>
 						<p><i>Embed animated heatmap here...</i></p>
 					</section>
 				</section>
