@@ -155,13 +155,9 @@
 				</section>
 
 				<section>
-					<section>
-						<h2>Simple Example</h2>
-					</section>
-					<section>
-						<h2>Command Line Tools (Linux/OS X)</h2>
-						<p>DSTK comes with Python scripts that provide command line access to the server's APIs. You can configure whether these tools should query a remote or local server.</p>
-						<pre><code>$ wget "http://www.datasciencetoolkit.org/python_tools.zip"
+					<h2>Simple Example</h2>
+					<p>DSTK comes with Python scripts that provide command line access to the server's APIs. You can configure whether these tools should query a remote or local server.</p>
+					<pre><code>$ wget "http://www.datasciencetoolkit.org/python_tools.zip"
 $ unzip python_tools.zip
 $ cd python
 $ sudo ./install
@@ -170,12 +166,11 @@ $ street2coordinates "1095 6th Ave New York, NY"
 "1095 6th Ave New York, NY",0.87,1095,New York,NY,-73.984118,USA,United States,36061,US,40.754842,6 Ave, 1095 6 Ave
 $ ip2coordinates "67.169.73.113"
 67.169.73.113,San Francisco,CA,415,-122.438102722,USA,United States,94114,807,US,37.7587013245</code></pre>
-					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Case Study: Trouble in Paradise</h2>
+						<h2>Detailed Case Study: Trouble in Paradise</h2>
 					</section>
 					<section>
 						<h2>Bulk Geocoding Incident Data</h2>
@@ -298,15 +293,51 @@ End Function</code></pre>
 					</section>
 				</section>
 
-<!-- 
+
 				<section>
 					<section>
 						<h2>Future Work</h2>
 					</section>
 					<section>
-						<h2></h2>
+						<h2>"DSTK Plus"</h2>
+						<ul>
+							<li>Idea: Build a free and open VM for exploratory data analysis</li>
+							<ul>
+								<li>Include common data analysis software</li>
+								<li>Accommodate old or underpowered hardware</li>
+									<ul>
+										<li>Allows use on obsolete corporate/government machines</li>
+										<li>Makes use in the developing world easier</li>
+									</ul>
+								<li>Use free- and open-source software</li>
+									<ul>
+										<li>Simplifies and broadens distribution</li>
+									</ul>
+							</ul>
+						</ul>
 					</section>
-				</section> -->
+					<section>
+						<h2>Plan</h2>
+						<ul>
+							<li>Build instance of DSTK built atop Lubuntu 12.04</li>
+							<li>Add data analysis and visualization tools</li>
+							<ul>
+								<li>R, Python, QGIS, etc.</li>
+							</ul>
+							<li>Write custom scripts to aid data analysis and visualization</li>
+							<ul>
+								<li>Data cleaning</li>
+								<li>Common statistical and geospatial routines</li>
+							</ul>
+							<li>Incorporate or add interfaces for other open datasets</li>
+							<ul>
+								<li><a href="https://github.com/sunlightpolicy/opendata/blob/master/USlocalopendataportals.csv">Open municipal datasets</a></li>
+								<li><a href="http://gdeltproject.org/">GDELT</a> on <a href="https://bigquery.cloud.google.com/table/gdelt-bq:full.events?pli=1">Google BigQuery</a></li>
+							</ul>
+							<li>Create approachable web interface for all these local services</li>
+						</ul>
+					</section>
+				</section>
 
 				<section>
 					<h2>Questions?</h2>
