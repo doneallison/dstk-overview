@@ -104,7 +104,7 @@
 
 				<section>
 					<section>
-						<h2>Strengths</h2>
+						<h2>Benefits</h2>
 					</section>
 					<section>
 						<h2>Free and open source</h2>
@@ -155,35 +155,39 @@
 
 				<section>
 					<section>
-						<h2>Limitations</h2>
+						<h2>Simple Example</h2>
 					</section>
 					<section>
-						<h2></h2>
+						<h2>Command Line Tools (Linux/OS X)</h2>
+						<p>DSTK comes with Python scripts that provide command line access to the server's APIs. You can configure whether these tools should query a remote or local server.</p>
+						<pre><code>$ wget "http://www.datasciencetoolkit.org/python_tools.zip"
+$ unzip python_tools.zip
+$ cd python
+$ sudo ./install
+$ cd ~
+$ street2coordinates "1095 6th Ave New York, NY"
+"1095 6th Ave New York, NY",0.87,1095,New York,NY,-73.984118,USA,United States,36061,US,40.754842,6 Ave, 1095 6 Ave
+$ ip2coordinates "67.169.73.113"
+67.169.73.113,San Francisco,CA,415,-122.438102722,USA,United States,94114,807,US,37.7587013245</code></pre>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>Demo</h2>
+						<h2>Case Study: Trouble in Paradise</h2>
 					</section>
 					<section>
-						<h2></h2>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Case Study</h2>
-					</section>
-					<section>
-						<h2>Bulk geocoding</h2>
+						<h2>Bulk Geocoding Incident Data</h2>
 						<ul>
-							<li>Task: Geocode hundreds of thousands of physical addresses in a crime incident dataset</li>
+							<li>Task: Geocode thousands of physical addresses in a crime incident dataset for Honolulu</li>
 							<li>Challenges</li>
 							<ul>
-								<li>Data security</li>
 								<li>Transaction limits</li>
 								<li>Latency</li>
+								<li>Data security</li>
+								<ul>
+									<li>Not really in this case, though, since it's <a href="https://data.honolulu.gov/dataset/Crime-Incidents/a96q-gyhq">open data</a></li>
+								</ul>
 							</ul>
 							<li>Solution: DSTK and Visual Basic for Applications (VBA)</li>
 						</ul>
@@ -275,15 +279,25 @@ End Function</code></pre>
 						<img src="images/parse.png" alt="Parsing the JSON response reveals latitude and longitude coordinates" height=75% width=75%>
 					</section>
 					<section>
-						<h2>Step Four: Execute VBA Script</h2>
-						<p><i>Embed screenshot of Excel worksheet and formulas...</i></p>
+						<h2>Step Four: Prepare the Data</h2>
+						<ul>
+							<li>Remove extraneous columns</li>
+							<li>Create columns for new data</li>
+							<li>Append "HONOLULU, HI" to end of block addresses</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Step Five: Execute VBA Script</h2>
+						<img src="images/honolulu.png" alt="Geocoded crime incident data" height=75% width=75%>
 					</section>
 					<section>
 						<h2>Results</h2>
-						<p><i>Embed animated heatmap here...</i></p>
+						<p>It took a half hour to geocode 58,434 addresses (about 32 geocodes/second). X% of those geocodes fell within Honolulu city limits.</p>
+						<img src="images/map.png" height=75% width=75%>
 					</section>
 				</section>
-
+				
+<!-- 
 				<section>
 					<section>
 						<h2>Future Work</h2>
@@ -291,7 +305,7 @@ End Function</code></pre>
 					<section>
 						<h2></h2>
 					</section>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>Questions?</h2>
